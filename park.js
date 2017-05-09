@@ -16,6 +16,16 @@ Park.prototype = {
 
   empty: function(){
     this.enclosure = [];
+  },
+
+  findAnimalsWithManyOffspring: function(){
+    var parentArray = []
+
+    for( i=this.enclosure.length-1; i>=0; i--) {
+        var parent = this.enclosure[i];
+        if(parent.offspring_per_year > 2) parentArray.push(parent);
+    }
+    return parentArray;
   }
 };
 

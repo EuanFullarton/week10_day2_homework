@@ -6,7 +6,7 @@ describe("Park", function(){
 
   beforeEach(function(){
     this.park = new Park();
-    this.dinosaur1 = new Dinosaur("T-Rex", 2);
+    this.dinosaur1 = new Dinosaur("T-Rex", 1);
     this.dinosaur2 = new Dinosaur("Triceratops", 3);
     this.dinosaur3 = new Dinosaur("Pterodactyl", 6);
   });
@@ -19,13 +19,6 @@ describe("Park", function(){
     this.park.addDinosaur(this.dinosaur1);
     assert.equal(1, this.park.enclosure.length);
   });
-
-  // it("should return all animals in enclosure", function(){
-  //   this.park.addDinosaur(this.dinosaur1);
-  //   this.park.addDinosaur(this.dinosaur1);
-  //   this.park.addDinosaur(this.dinosaur2);
-  //   assert.equal(0, this.park.removeDinosaurOfType(this.dinosaur1));
-  // })
 
   it("should be able to empty enclosure", function(){
     this.park.addDinosaur(this.dinosaur1);
@@ -53,6 +46,14 @@ describe("Park", function(){
     this.park.removeDinosaurOfType(this.dinosaur2);
     assert.equal(2, this.park.enclosure.length);
 
+  });
+
+  it("should be able to find all dinosaurs with a greater offspring count than 2", function(){
+    this.park.addDinosaur(this.dinosaur1);
+    this.park.addDinosaur(this.dinosaur2);
+    this.park.addDinosaur(this.dinosaur3);
+    this.park.addDinosaur(this.dinosaur3);
+    assert.equal(3, this.park.findAnimalsWithManyOffspring().length);
   });
 
 });
