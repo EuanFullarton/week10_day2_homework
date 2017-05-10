@@ -53,7 +53,7 @@ describe("Park", function(){
     this.park.addDinosaur(this.dinosaur2);
     this.park.addDinosaur(this.dinosaur3);
     this.park.addDinosaur(this.dinosaur3);
-    assert.equal(3, this.park.findAnimalsWithManyOffspring().length);
+    assert.equal(3, this.park.findDinosaursWithManyOffspring().length);
   });
 
 });

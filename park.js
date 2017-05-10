@@ -9,7 +9,7 @@ Park.prototype = {
 
   removeDinosaurOfType: function(dinosaur){
 
-    for( i=this.enclosure.length-1; i>=0; i--) {
+    for(var i=this.enclosure.length-1; i>=0; i--) {
         if( this.enclosure[i].type == dinosaur.type) this.enclosure.splice(i,1);
     }
   },
@@ -18,10 +18,10 @@ Park.prototype = {
     this.enclosure = [];
   },
 
-  findAnimalsWithManyOffspring: function(){
+  findDinosaursWithManyOffspring: function(){
     var parentArray = []
 
-    for( i=this.enclosure.length-1; i>=0; i--) {
+    for(var i=this.enclosure.length-1; i>=0; i--) {
         var parent = this.enclosure[i];
         if(parent.offspring_per_year > 2) parentArray.push(parent);
     }
